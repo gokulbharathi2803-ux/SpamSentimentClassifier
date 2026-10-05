@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spam & Sentiment Classifier</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Spam & Sentiment Classifier</h1>
+
+        <p class="subtitle">
+            Machine Learning based Text Classification
+        </p>
+
+
+        <form method="POST">
+
+            <label for="text">
+                Enter your message
+            </label>
+
+            <textarea
+                id="text"
+                name="text"
+                rows="7"
+                placeholder="Type or paste your message here..."
+                required
+            >{{ text }}</textarea>
+
+
+            <div class="buttons">
+
+                <button
+                    type="submit"
+                    name="task"
+                    value="spam"
+                >
+                    Check Spam
+                </button>
+
+
+                <button
+                    type="submit"
+                    name="task"
+                    value="sentiment"
+                >
+                    Check Sentiment
+                </button>
+
+            </div>
+
+        </form>
+
+
+        {% if result %}
+
+        <div class="result">
+
+            <h2>Result</h2>
+
+            <p class="result-text">
+                {{ result }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</body>
+
+</html>

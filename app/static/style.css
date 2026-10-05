@@ -1,0 +1,584 @@
+/* ==========================================
+   GLOBAL SETTINGS
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc,
+        #ecfeff
+    );
+
+    background-size: 300% 300%;
+
+    color: #1e293b;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation: backgroundMove 12s ease infinite;
+}
+
+
+/* ==========================================
+   BACKGROUND ANIMATION
+========================================== */
+
+@keyframes backgroundMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.container {
+    width: 90%;
+
+    max-width: 850px;
+
+    margin: 40px auto;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.12);
+
+    border: 1px solid #e2e8f0;
+
+    animation: containerAppear 0.8s ease-out;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Container hover */
+
+.container:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.16);
+}
+
+
+/* ==========================================
+   CONTAINER ENTRY ANIMATION
+========================================== */
+
+@keyframes containerAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==========================================
+   HEADING
+========================================== */
+
+h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    animation: headingAppear 1s ease-out;
+}
+
+
+@keyframes headingAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   SUBTITLE
+========================================== */
+
+.subtitle {
+    text-align: center;
+
+    margin-top: 10px;
+
+    margin-bottom: 35px;
+
+    font-size: 16px;
+
+    color: #64748b;
+
+    animation: fadeIn 1.2s ease-out;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   LABEL
+========================================== */
+
+label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+/* ==========================================
+   TEXT AREA
+========================================== */
+
+textarea {
+    width: 100%;
+
+    min-height: 180px;
+
+    padding: 18px;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #0f172a;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    resize: vertical;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Textarea hover */
+
+textarea:hover {
+    border-color: #a5b4fc;
+
+    background: white;
+
+    transform: translateY(-1px);
+}
+
+
+/* Textarea focus */
+
+textarea:focus {
+    border-color: #6366f1;
+
+    background: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12),
+        0 8px 25px rgba(99, 102, 241, 0.10);
+}
+
+
+textarea::placeholder {
+    color: #94a3b8;
+
+    transition: opacity 0.3s ease;
+}
+
+
+textarea:focus::placeholder {
+    opacity: 0.5;
+}
+
+
+/* ==========================================
+   BUTTON AREA
+========================================== */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 22px;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button {
+    position: relative;
+
+    overflow: hidden;
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: #4f46e5;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Button hover */
+
+button:hover {
+    background: #4338ca;
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.30);
+}
+
+
+/* Button click */
+
+button:active {
+    transform:
+        translateY(0)
+        scale(0.97);
+
+    box-shadow:
+        0 4px 10px rgba(79, 70, 229, 0.20);
+}
+
+
+/* ==========================================
+   BUTTON SHINE ANIMATION
+========================================== */
+
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+
+button:hover::before {
+    left: 140%;
+}
+
+
+/* ==========================================
+   SECOND BUTTON
+========================================== */
+
+button:nth-child(2) {
+    background: #0f766e;
+}
+
+
+button:nth-child(2):hover {
+    background: #115e59;
+
+    box-shadow:
+        0 10px 25px rgba(15, 118, 110, 0.30);
+}
+
+
+/* ==========================================
+   RESULT BOX
+========================================== */
+
+.result {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    animation: resultAppear 0.5s ease-out;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Result hover */
+
+.result:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ==========================================
+   RESULT ENTRY ANIMATION
+========================================== */
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==========================================
+   RESULT TITLE
+========================================== */
+
+.result h2 {
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+
+    color: #475569;
+}
+
+
+/* ==========================================
+   RESULT TEXT
+========================================== */
+
+.result-text {
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #0f172a;
+
+    animation: resultPop 0.6s ease-out;
+}
+
+
+/* ==========================================
+   RESULT POP ANIMATION
+========================================== */
+
+@keyframes resultPop {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+
+    70% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 94%;
+
+        padding: 28px;
+
+        margin: 20px auto;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+    }
+
+
+    button {
+        width: 100%;
+    }
+
+
+    textarea {
+        min-height: 160px;
+    }
+
+
+    .result-text {
+        font-size: 24px;
+    }
+}
+
+
+/* ==========================================
+   REDUCE ANIMATION FOR ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
